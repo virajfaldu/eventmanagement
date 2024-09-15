@@ -1,43 +1,134 @@
-# Event Management API
+# Event Management System
 
-## Overview
-
-This is a RESTful API for an event management system built with Node.js, TypeScript, and Sequelize. The API includes features for managing events and user authentication.
+This project is an Event Management System that allows users to create, read, update, and delete events. Users can also view a list of events with pagination, sorting, and filtering functionalities. The project is built with a tech stack that includes Node.js for the backend and React.js for the frontend, using TypeScript for both.
 
 ## Features
 
-- **Event Management:**
-  - Create, read, update, and delete events
-  - Pagination, sorting, and filtering of events
-  - Search functionality
+1. *CRUD Operations for Events*:
+    - Create, read, update, and delete events.
+    - Each event includes the following fields:
+        - Name: Title of the event.
+        - Description: Detailed information about the event.
+        - Multiple Images: Upload images using multipart/form-data. (pending)
+        - Start Date and End Date.
+        - Total Guests (Optional): Maximum number of guests allowed.
+    - Events are associated with a specific user. Only the creator can update or delete their events.
 
-- **User Authentication:**
-  - User registration
-  - User login
-  - JWT-based authentication
+2. *Event Listing*:
+    - Pagination for efficient handling of large datasets.
+    - Sorting by criteria such as name or date.
+    - Basic Filtering by event name, start date, and end date.
+    - Advanced Filtering (Bonus): Filtering by event category. (pending)
+    - Search functionality to find events based on keywords.
 
-## Technologies
+3. *Input Validation*:
+    - Client-Side Validation: Ensures proper input validation on the client side.
+    - Server-Side Validation: Prevents invalid data from being processed or stored.
 
-- Node.js
-- TypeScript
-- Sequelize
-- MySQL
-- Express
-- bcryptjs (for hashing passwords)
-- jsonwebtoken (for generating JWTs)
-- express-validator (for input validation)
+4. *Login page*
+    - where user will be authenticated and then he/she can see crud
 
-## Setup
+## Tech Stack
+
+### Backend
+- *Framework*: Nest.js (or Node.js)
+- *Language*: TypeScript
+- *Database*: PostgreSQL or MySQL, managed with Sequelize or TypeORM
+- *Validation*: Using class-validator in Nest.js or similar libraries in Node.js
+- *Image Upload*: Handled via multipart/form-data
+
+### Frontend
+- *Framework*: React.js
+- *Language*: TypeScript
+- *Styling*: CSS/SCSS or any preferred CSS framework
+
+### Additional Tools
+- *Database Migrations*: Sequelize (for MySQL) or TypeORM (for PostgreSQL)
+- *Error Handling and Logging*: Basic error handling mechanisms and logging throughout the application.
+
+## Setup Instructions
 
 ### Prerequisites
 
 - Node.js and npm installed
-- MySQL database
+- MySQL database set up
+- Git
 
-### Installation
+### Backend Setup
 
 1. Clone the repository:
+    bash
+    git clone <repository-url>
+    cd event-management-backend
+    
 
-   ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+2. Install dependencies:
+    bash
+    npm install
+    
+
+3. Create a .env file in the root directory and add the necessary environment variables:
+    env
+    DATABASE_URL=<your-database-url>
+    JWT_SECRET=<your-jwt-secret>
+    
+
+4. Run database migrations:
+    bash
+    npm run migrate
+    
+
+5. Start the backend server:
+    bash
+    npm run start
+    
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+    bash
+    cd event-management-frontend
+    
+
+2. Install dependencies:
+    bash
+    npm install
+    
+
+3. Create a .env file in the root directory of the frontend and add necessary environment variables:
+    env
+    REACT_APP_API_URL=<backend-api-url>
+    
+
+4. Start the frontend application:
+    bash
+    npm start
+    
+
+## Usage
+
+- Access the frontend application in your browser at http://localhost:3000.
+- Use the interface to create, view, update, and delete events.
+- Pagination, sorting, filtering, and search features are available in the event listing.
+
+## Database Migrations
+
+- Migrations are managed using Sequelize (MySQL) or TypeORM (PostgreSQL).
+- To create a new migration, use:
+    bash
+    npm run migration:create <migration-name>
+    
+- To run migrations, use:
+    bash
+    npm run migrate
+    
+
+## Project Structure
+
+- event-management-backend/: Contains the Node.js backend.
+- event-management-frontend/: Contains the React.js frontend.
+- README.md: Project documentation.
+
+## Contact
+
+For any inquiries or issues, please contact [virajfaldu672002@gmail.com].
