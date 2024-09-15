@@ -28,22 +28,33 @@ This project is an Event Management System that allows users to create, read, up
 4. *Login page*
     - where user will be authenticated and then he/she can see crud
 
+
+## Pending Feature
+
+    - due to ETA of 3 hour i have fulfill most requirement but some are not done yet 
+
+
+    - file-upload : i had use multer for file upload but some error are occured while adding file so currently i had not done 
+    - filter : filter on front-end side is pending
+
+
 ## Tech Stack
 
 ### Backend
-- *Framework*: Nest.js (or Node.js)
+- *Framework*: Node.js
 - *Language*: TypeScript
-- *Database*: PostgreSQL or MySQL, managed with Sequelize or TypeORM
-- *Validation*: Using class-validator in Nest.js or similar libraries in Node.js
-- *Image Upload*: Handled via multipart/form-data
+- *Database*: MySQL, managed with Sequelize
+- *Image Upload*: Handled via multipart/form-data and multar
+- *Authentication*: bcryptjs (for hashing passwords) ,jsonwebtoken (for generating JWTs)
+- *Validation*: express-validator (for input validation)
 
 ### Frontend
 - *Framework*: React.js
 - *Language*: TypeScript
-- *Styling*: CSS/SCSS or any preferred CSS framework
+- *Styling*: CSS
 
 ### Additional Tools
-- *Database Migrations*: Sequelize (for MySQL) or TypeORM (for PostgreSQL)
+- *Database Migrations*: Sequelize (for MySQL)
 - *Error Handling and Logging*: Basic error handling mechanisms and logging throughout the application.
 
 ## Setup Instructions
@@ -69,7 +80,11 @@ This project is an Event Management System that allows users to create, read, up
 
 3. Create a .env file in the root directory and add the necessary environment variables:
     env
-    DATABASE_URL=<your-database-url>
+    DB_NAME=<dbname>
+    DB_USER=<dbusername>
+    DB_PASSWORD=<dbpassword>
+    DB_HOST=<dbhost>
+    PORT=<nodeserverport>
     JWT_SECRET=<your-jwt-secret>
     
 
