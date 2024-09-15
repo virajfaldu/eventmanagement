@@ -125,17 +125,6 @@ This project is an Event Management System that allows users to create, read, up
 - Access the frontend application in your browser at http://localhost:3000.
 - Use the interface to create, view, update, and delete events.
 - Pagination, sorting, filtering, and search features are available in the event listing.
-
-## Database Migrations
-
-- Migrations are managed using Sequelize (MySQL) or TypeORM (PostgreSQL).
-- To create a new migration, use:
-    bash
-    npm run migration:create <migration-name>
-    
-- To run migrations, use:
-    bash
-    npm run migrate
     
 
 ## Project Structure
